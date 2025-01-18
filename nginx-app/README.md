@@ -1,0 +1,1 @@
+This is Repo is to test and practice argoCD in K8s.
