@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: Nginx-app
-  namespace: argocd
+  namespace: argo
 spec:
   project: default
   source:
@@ -12,4 +12,7 @@ spec:
     path: nginx-app
   destination:
     server: https://kubernetes.default.svc
-    namespace: guestbook
+    namespace: nginx-ns
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace = true
